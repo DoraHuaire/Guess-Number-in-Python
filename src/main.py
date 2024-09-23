@@ -14,10 +14,10 @@ def guess_number(player_assumptions, computer_assumptions):
         print(f"\n----Round:{turn}----")
         #Llama a la función de computer y player para obtener sus números
         if turn == "Jugador":
-           chosen_number = player() 
+           chosen_number = number_player() 
            player_assumptions.append(chosen_number)
         else: 
-           chosen_number = computer()  
+           chosen_number = number_computer()  
            computer_assumptions.append(chosen_number)
     
         #Si el número es None, vuelve a intentarlo
@@ -41,6 +41,8 @@ def guess_number(player_assumptions, computer_assumptions):
         # de lo contrario si el turno es computador pasa a jugador
         else: 
            turn = "Jugador"
+      
+pass
 
 #Definimos una función que realice ejecute un if que compare si el número del jugador y de la computadora es el correcto o no
 def check_number(chosen_number, secret_number):
@@ -54,14 +56,14 @@ def check_number(chosen_number, secret_number):
     return result
            
 # Definimos una función que genere el número random de la computadora    
-def computer():
+def number_computer():
     computer_random = number_random()
     print(f"La computadora elige: {computer_random}") 
     return computer_random 
 
 
 # Definimos una función que le pida al jugador su número con un input
-def player():
+def number_player():
     try:
         return int(input("Escribe un número entero (entre 1 y 100): "))
     except ValueError:
@@ -96,3 +98,6 @@ def start_game():
     play_again()
      
 start_game()
+
+if __name__ == '__main__':
+   start_game()
