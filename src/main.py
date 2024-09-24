@@ -25,16 +25,17 @@ def guess_number(player_assumptions, computer_assumptions):
             continue
         
         #compara el número para ver si es el correcto
-        message = check_number(chosen_number, secret_number)
-        print(message)
+        result = check_number(chosen_number, secret_number)
+        print(result)
         
         if chosen_number == secret_number:
             if turn == "Jugador":
                print(f"Estas fueron tus suposiciones: {player_assumptions}")
+               return "Jugador" 
             else: 
                print(f"Estas fueron tus suposiciones: {computer_assumptions}")
-            break
-        
+               return "Computadora" 
+            
         # si el turno es jugador, entonces cambia a computador
         if turn == "Jugador":
            turn = "Computadora" 
@@ -42,8 +43,6 @@ def guess_number(player_assumptions, computer_assumptions):
         else: 
            turn = "Jugador"
       
-pass
-
 #Definimos una función que realice ejecute un if que compare si el número del jugador y de la computadora es el correcto o no
 def check_number(chosen_number, secret_number):
     
@@ -65,7 +64,8 @@ def number_computer():
 # Definimos una función que le pida al jugador su número con un input
 def number_player():
     try:
-        return int(input("Escribe un número entero (entre 1 y 100): "))
+        number = int(input("Escribe un número entero (entre 1 y 100): "))
+        return number
     except ValueError:
         print("Por favor ingresa un número entero válido.")
         return None  #Retorna None si el input no es un número válido
@@ -77,15 +77,14 @@ def play_again():
 
     if restart_game.lower() == 'sí' or restart_game.lower() == 'si':
        print("¡Genial! ¡Vamos a jugar nuevamente!")
-       start_game()
+       return start_game()
     else:
        print("Gracias por jugar. ¡Hasta la próxima!")
     
 
 #Definimos la función que de iniciar el juego con la bienvenida, llama a la ejecución del juego y a volver a jugar
 def start_game():
-    print("\n----¡Bienvenido a Guess the Number!----")
-    print("Tú y la computadora intentarán adivinar el número correcto")
+    print("\n----¡Bienvenido a Guess the Number!---- \nTú y la computadora intentarán adivinar el número correcto")
     
     #definimos las listas 
     player_assumptions = [] 
@@ -95,9 +94,7 @@ def start_game():
     guess_number(player_assumptions, computer_assumptions)
     
     #Una vez terminado, damos la opción de reiniciar el juego
-    play_again()
-     
-start_game()
+    return play_again() 
 
 if __name__ == '__main__':
    start_game()
