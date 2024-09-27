@@ -1,8 +1,8 @@
-# Guess the Number Game
+# Guess the Number Game 🧙‍♀️💻🧙‍♂️
 
 Este proyecto es un juego interactivo llamado Guess the Number, desarrollado. El objetivo del juego es que el jugador y la computadora intenten adivinar un número secreto entre 1 y 100, turnándose para hacer sus suposiciones.
 
-![gif-juego](src\assets\images\juego.gif)
+![gif-juego](src/assets/images/juego.gif)
 
 ## 1. Requisitos
 
@@ -23,19 +23,19 @@ Una parte fundamental de este proyecto fue entender y aplicar funciones en Pytho
 
 Aprendí a manejar errores potenciales usando el bloque try-except para asegurar que el juego no se detuviera si el jugador ingresaba un valor no válido:
 
-![imagen-excepciones](src\assets\images\excepciones.png)
+![imagen-excepciones](src/assets/images/excepciones.png)
 
 ## 4. Listas de datos
 
 Utilicé listas para almacenar las suposiciones realizadas tanto por el jugador como por la computadora. Esto me ayudó a hacer un seguimiento de los números que ya se habían adivinado durante el juego:
 
-![imagen-listas](src\assets\images\listas.png)
+![imagen-listas](src/assets/images/listas.png)
 
 ## 5. Condicionales y bucles
 
 El uso de bucles while y condicionales if-else fue esencial para controlar el flujo del juego. Aprendí a cambiar los turnos entre el jugador y la computadora, y a finalizar el juego cuando alguien adivinaba correctamente:
 
-![vista-condiciones](src\assets\images\condiciones.png)
+![vista-condiciones](src/assets/images/condiciones.png)
 
 ## 6. Pruebas unitarias con unittest
 
